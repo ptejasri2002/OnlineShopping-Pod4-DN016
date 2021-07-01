@@ -1,0 +1,122 @@
+﻿@model OnlineShoppingTeam4.Models.Products
+
+@{
+    ViewBag.Title = "Remove";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Remove</h2>
+<hr />
+<ol class="breadcrumb">
+    <li>
+        @Html.ActionLink("Dashboard", "Home", "Dashboard")
+    </li>
+    <li>
+        @Html.ActionLink("Products", "Index", "Product")
+    </li>
+    @{
+        string category = Request.QueryString["category"] ?? "";
+        if (!String.IsNullOrEmpty(category))
+        {
+            <li>
+                @Html.ActionLink(category, "Index", "Product", new { category = category }, null)
+            </li>
+        }
+    }
+    <li class="active">Remove</li>
+</ol>
+
+<h3>Are you sure want to delete?</h3>
+<div class="row">
+    <div class="col-lg-4">
+        <h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Category Name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category.CategoryName)<br />
+            </dd>
+
+            <dt>
+                Company Name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Supplier.CompanyName)<br />
+            </dd>
+
+            <dt>
+                Product Name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProductName)<br />
+            </dd>
+
+            <dt>
+                Quantity Per Unit
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.QuantityPerUnit)<br />
+            </dd>
+
+            <dt>
+                Unit Price
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UnitPrice)<br />
+            </dd>
+
+            <dt>
+                Units In Stock
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UnitsInStock)<br />
+            </dd>
+
+            <dt>
+                Units On Order
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UnitsOnOrder)<br />
+            </dd>
+
+            <dt>
+                Reorder Level
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ReorderLevel)<br />
+            </dd>
+
+            <dt>
+                Discontinued
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Discontinued)<br />
+            </dd>
+
+        </dl>
+        @using (Html.BeginForm("Delete", "Product", new { id = Model.ProductID }, FormMethod.Post, htmlAttributes: new { @class = "col-lg-12" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Remove" class="btn btn-default" /> |
+                @Html.ActionLink("Back", "Index", new { category = category, search = Request.QueryString["search"] ?? "" }, new { @class = "btn btn-default" })
+            </div>
+            <br />
+        }
+    </div>
+    <div class="col-lg-8">
+        <img src="~/Images/@Model.Category.CategoryName/@(Model.ProductID).jpg" class="img-responsive" />
+    </div>
+
+</div>

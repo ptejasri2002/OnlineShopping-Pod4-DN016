@@ -1,0 +1,117 @@
+﻿@model OnlineShoppingTeam4.Models.Suppliers
+
+@{
+    ViewBag.Title = "Remove";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Remove</h2>
+<hr />
+<ol class="breadcrumb">
+   
+    <li>
+        @Html.ActionLink("Retailers", "Index", "Suppliers")
+    </li>
+    <li class="active">Remove</li>
+</ol>
+<h3>Are you sure want to delete?</h3>
+<div>
+    <hr />
+    <h4>Retailer</h4>
+   
+    
+    <dl class="dl-horizontal">
+        <dt>
+            CompanyName
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)<br />
+        </dd>
+
+        <dt>
+            ContactName
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactName)<br />
+        </dd>
+
+        <dt>
+            Position
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactTitle)<br />
+        </dd>
+
+        <dt>
+            Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)<br />
+        </dd>
+
+        <dt>
+            City
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)<br />
+        </dd>
+
+        <dt>
+            Region
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region)<br />
+        </dd>
+
+        <dt>
+            PostalCode
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostalCode)<br />
+        </dd>
+
+        <dt>
+            Country
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)<br />
+        </dd>
+
+        <dt>
+            Phone
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)<br />
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)<br />
+        </dd>
+
+        
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remove" class="btn btn-default" /> 
+           @Html.ActionLink("Back", "Index", null, new {  @class="btn btn-default" })
+        </div>
+    }
+</div>

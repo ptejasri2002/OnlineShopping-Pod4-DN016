@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Phone Studio - @ViewBag.Title</title>
+    <!-- Bootstrap Core CSS -->
+    @*<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">*@
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- MetisMenu CSS -->
+    <link href="~/css/Style.css" rel="stylesheet" />
+    <link href="~/css/DashboardMenu.css" rel="stylesheet" />
+    <link href="~/css/metisMenu/metisMenu.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <!-- jQuery UI-->
+
+
+    <link href="~/css/dist/sb-admin-2.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+
+    <link href="~/css/morris.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+
+
+    <!--Data tables-->
+    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/responsive.dataTables.min.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              
+                <a href='@Url.Action("Index", "Home")' class="navbar-brand"><i class="fa fa-home fa-fw"></i> Northwind Phone</a>
+                @*@Html.ActionLink(" Northwind Phone", "Index", new { controller = "Home" }, new { @class = "navbar-brand" })*@
+            </div>
+
+
+
+            <!-- /.navbar-left-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav collapse navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+
+                                <form id="searchInput" action='@Url.Action("Search", "Dashboard")'>
+                                    <div class="input-group">
+                                        <input type="text" name="search" class="form-control searchinput" style="width:auto" placeholder="Cauta">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default" type="submit">
+                                                <i class="glyphicon glyphicon-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href='@Url.Action("Home", "Dashboard")'><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+
+
+
+                            <!--@Html.ActionLink("Dashboard", "Home", "Dashboard")-->
+                        </li>
+
+                        <li id="reports">
+                            <a href='@Url.Action("LogIn", "Reports")'><i class="fa fa-files-o fa-fw"></i> Rapoarte</a>
+                        </li>
+                        <li id="entity" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-alt fa-fw"> </i> Entitati<b class="caret"></b></a>
+                            <ul class="nav nav-second-level">
+                                <li id="category" class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Produse<b class="caret"></b></a>
+                                    <ul class="nav nav-third-level">
+                                        <li id="product">
+                                            @Html.ActionLink("Toate", "Index", "Product")
+                                        </li>
+                                      
+
+                                    </ul>
+                                </li>
+                                <li id="orders">
+                                    @Html.ActionLink("Comenzi", "Index", "Orders")
+                                </li>
+                                <li id="customers">
+                                    @Html.ActionLink("Clienti", "Index", "Customers")
+                                </li>
+                                <li id="employees">
+                                    @Html.ActionLink("Angajati", "Index", "Employees")
+                                </li>
+                                <li id="categories">
+                                    @Html.ActionLink("Categorii", "Index", "Categories")
+                                </li>
+                                <li id="suppliers">
+                                    @Html.ActionLink("Furnizori", "Index", "Suppliers")
+                                </li>
+                                <li id="shippers">
+                                    @Html.ActionLink("Expeditori", "Index", "Shippers")
+                                </li>
+                                <li id="regions">
+                                    @Html.ActionLink("Regiuni", "Index", "Regions")
+                                </li>
+                            </ul>
+                        </li>
+                        @Html.Partial("_SecurityPartial")
+                        <li id="error">
+                            <a href='@Url.Action("Index", "Errors")'><i class="fa  fa-exclamation-circle fa-fw"></i> Erori</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <!-- /.sidebar-collapse -->
+            <!-- /.navbar-static-side -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse  navbar-right" role="navigation">
+
+                <ul class="nav navbar-nav">
+
+                    @Html.Partial("_LoginPartialDashBoard")
+
+                </ul>
+
+            </div>
+        </nav>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @RenderBody()
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+
+    <script src="~/js/metisMenu/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="~/js/raphael/raphael.min.js"></script>
+    <script src="~/js/morrisjs/morris.min.js"></script>
+    <div id="sc">
+
+    </div>
+    <script>
+
+        if (window.location.href.search("Dashboard/Home") != -1) {
+            var my_awesome_script = document.createElement('script');
+
+            var host = 'http://' + window.location.host + '/js/morrisjs/morris-data.js';
+            my_awesome_script.setAttribute('src', host);
+
+            document.getElementById("sc").appendChild(my_awesome_script);
+        }
+    </script>
+    <script src="~/js/dist/sb-admin-2.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.responsive.js"></script>
+
+    <script src="~/Scripts/product.js"></script>
+
+    <!-- section scripts from _Layout-->
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

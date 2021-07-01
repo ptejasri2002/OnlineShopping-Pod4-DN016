@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.EntityFramework
+@using OnlineShoppingTeam4.Models
+@using OnlineShoppingTeam4.Context
+
+@{
+    var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new OnlineShoppingTeam4.Models.ApplicationDbContext()));
+}
+
+<li>
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "form-inline navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+
+
+
+    @Html.ActionLink("User: " + @User.Identity.GetUserName(), "Index", "Manage")
+</li>
+
+
+<li><a href="javascript:document.getElementById('logoutForm').submit()">Log out</a></li>
+
+

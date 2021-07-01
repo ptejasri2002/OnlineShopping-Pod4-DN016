@@ -1,0 +1,273 @@
+﻿body {
+    font-family: Tahoma;
+}
+/*products images*/
+img[class~=products] {
+    max-width: 100%;
+    max-height: 225px;
+}
+
+/*make li without point*/
+.liWithoutPoint {
+    list-style-type: none;
+}
+
+/*text large used in products view*/
+[class~=textlarge] {
+    font-size: large;
+}
+
+/*text color in products page*/
+[class~=coloronwhite] {
+    color: #df691a;
+}
+
+/*price font*/
+.price {
+    color: #df691a;
+    font-size: large;
+    font-weight: bold;
+}
+
+/*global shop cart container*/
+.shopcartcontainer {
+  /*  position: absolute;
+    padding: 20px 25px 0px 20px;
+    right: 0px;*/
+    position: absolute;
+    /* padding: 20px 25px 0px 20px; */
+    right: 30px;
+    top: 70px;
+}
+
+/*container for product shop cart*/
+.shopcartcontainer-products {
+    position: absolute;
+    padding: 20px 25px 0px 20px;
+    left: 0px;
+    color: white;
+    text-decoration: none;
+}
+/*global shop cart container*/
+.wishlistcontainer {
+  /*  position: absolute;
+    padding: 63px 25px 0px 20px;
+    right: 0px;*/
+    position: absolute;
+    /* padding: 63px 25px 0px 20px; */
+    right: 70px;
+    top: 70px;
+}
+
+/*container for product shop cart*/
+.wishlistcontainer-products {
+    position: absolute;
+    padding: 63px 25px 0px 20px;
+    left: 0px;
+    color: white;
+    text-decoration: none;
+}
+
+/*shop icon dimension*/
+[class~=glyphicon-shopping-cart] {
+    font-size: 25px;
+    padding: 5px 5px 5px 5px;
+}
+/*shop icon dimension*/
+[class~=glyphicon-heart-empty] {
+    font-size: 25px;
+    padding: 5px 5px 5px 5px;
+}
+/*shop icon dimension*/
+[class~=glyphicon-trash] {
+    font-size: 25px;
+    padding: 5px 5px 5px 5px;
+}
+/*search icon in product. weerd position resolve*/
+.cssencapsulate > .input-group-btn {
+    width: auto !important;
+}
+/*white and rounded background*/
+[class~=whiterounded] {
+    border-radius: 20px;
+    background-color: white;
+    padding: 20px;
+}
+
+/*the shopcart icon from products*/
+.shopcartProductIcon{
+    color:white;
+    text-decoration:none;
+}
+/*the shopcart icon from products*/
+.wishlistProductIcon {
+    color: white;
+    text-decoration: none;
+}
+/*circle for shop cart*/
+[class~=roundedshop] {
+    background-color: rgb(223, 105, 26);
+    padding: 0px 0px 0px 0px;
+    width: 35px;
+    height: 35px;
+}
+/*text of global shop cart*/
+.shopcart-container-text {
+    position: absolute;
+    margin-top: -12px;
+    width: 35px;
+    text-align: right;
+    float: left;
+}
+/*text of global shop cart*/
+.wishlist-container-text {
+    position: absolute;
+    margin-top: -12px;
+    width: 35px;
+    text-align: right;
+    float: left;
+}
+
+/*text of product cart*/
+#shopcart-productcount {
+    font-size: 10px;
+    border: 1px #2b3e50 solid;
+    border-radius: 5px;
+    background-color: rgba(16, 117, 24, 0.6);
+    width: auto;
+    margin: 0px;
+    padding: 0px 2px 0px 2px;
+    color: white;
+}
+
+/*text of product cart*/
+#wishlist-productcount {
+    font-size: 10px;
+    border: 1px #2b3e50 solid;
+    border-radius: 5px;
+    background-color: rgba(16, 117, 24, 0.6);
+    width: auto;
+    margin: 0px;
+    padding: 0px 2px 0px 2px;
+    color: white;
+}
+
+/*change color of text -- used in Views-Home-Index*/
+.home {
+    color: #2b3e50;
+}
+
+h3.prodpad {
+    padding-left: 40px;
+}
+
+/*change dimensions of images -- used in Views-Services-Index*/
+.img-services {
+    width: 700px;
+    height: 320px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 20px;
+}
+
+.bread {
+    position: relative;
+    top: -30px;
+}
+
+
+/*put search left in crud view*/
+.crudFormButtonLeftOfSearch {
+    float: left;
+}
+
+    .crudFormButtonLeftOfSearch:after {
+        clear: left;
+    }
+
+/*padding left 10px*/
+.paddingLeftTen {
+    padding-left: 10px;
+}
+/*search in products*/
+.form-control {
+    float: right !important;
+}
+
+
+/*change text color -- used in Create,Edit from Orders*/
+.ord-form {
+    color: black;
+}
+
+/*change from dimension -- used in Create,Edit from Orders*/
+.form {
+    width: 175px;
+}
+
+/*black text for crud input and select*/
+[class~=crudstyle] input, [class~=crudstyle] select {
+    color: black;
+}
+
+/*report iframe*/
+iframe {
+    height: 400px;
+    width: 100%;
+}
+/*report iframe*/
+iframe.fill {
+    height: 90vh;
+    width: 100%;
+    overflow-y:visible;
+}
+
+[class~=particularEmployees] {
+    margin: 20px;
+}
+/*for the shopcart icon so the image won't be the same color as the background*/
+.shopcart-link {
+    color: white;
+    text-decoration: none;
+}
+
+    .shopcart-link:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+/*for the shopcart icon so the image won't be the same color as the background*/
+.wishlist-link {
+    color: white;
+    text-decoration: none;
+}
+
+    .wishlist-link:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+.tablebackground {
+    background-color: #2b3e50;
+}
+
+.shopCartImage {
+    max-height: 15%;
+    max-width: 15%;
+    padding-right:5%;
+}
+
+.grayscale90 {
+    filter: grayscale(90%);
+}
+
+
+
+/*style for the dashboard errors page*/
+.error-navbar{
+    max-height:20vh;
+    overflow-y:auto;
+}
+.error-message{
+    padding-top:10px;
+}

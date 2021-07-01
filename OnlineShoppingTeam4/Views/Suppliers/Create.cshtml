@@ -1,0 +1,127 @@
+﻿@model OnlineShoppingTeam4.Models.Suppliers
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add</h2>
+<ol class="breadcrumb">
+   
+    <li>
+        @Html.ActionLink("Retailers", "Index", "Suppliers")
+    </li>
+    <li class="active">Add</li>
+</ol>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Retailers</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <span class = "control-label col-md-2 bold"><strong>CompanyName</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CompanyName)
+                @Html.ValidationMessageFor(model => model.CompanyName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>ContactName</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ContactName)
+                @Html.ValidationMessageFor(model => model.ContactName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Position</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ContactTitle)
+                @Html.ValidationMessageFor(model => model.ContactTitle)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Address</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>City</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City)
+                @Html.ValidationMessageFor(model => model.City)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Region</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Region)
+                @Html.ValidationMessageFor(model => model.Region)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>PostalCode</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PostalCode)
+                @Html.ValidationMessageFor(model => model.PostalCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Country</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Country)
+                @Html.ValidationMessageFor(model => model.Country)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Phone</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Phone)
+                @Html.ValidationMessageFor(model => model.Phone)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Email</strong></span>
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Email )
+                @Html.ValidationMessageFor(model => model.Email )
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Password</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password )
+                @Html.ValidationMessageFor(model => model.Password )
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-default" })
+                <input type="submit" value="Add" class="btn btn-default" />
+              
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

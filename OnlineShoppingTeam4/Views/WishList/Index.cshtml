@@ -1,0 +1,65 @@
+@model OnlineShoppingTeam4.Models.WishList.wishlistDetails
+@{ ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+<div class="container whiterounded coloronwhite">
+    <h2>WishList</h2>
+    <hr />
+
+    <table id="ShopCartTable" class="cell-border hover order-column coloronwhite">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Qty
+                </th>
+                <th>
+                    Unit price
+                </th>
+                <th>
+                    Product total
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="display:none;">Items</td>
+            </tr>
+
+            @if (Model.cart != null)
+            {
+                
+                    int i = 1;
+                
+                foreach (var item in Model.cart)
+                {
+                    <tr>
+                        <td style="display:none;">@Html.DisplayFor(modelItem => item.ID)</td>
+                        <td>@i</td>
+                        <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+
+                        <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+
+                        <td>@Html.DisplayFor(modelItem => item.UnitPrice)</td>
+
+                        <td>@Html.DisplayFor(modelItem => item.TotalPrice)</td>
+                       
+
+                    </tr>
+                    i += 1;
+                }
+            }
+
+        </tbody>
+
+    </table>
+    <br />
+    <div class="container col-xs-9">
+        <strong><span class="coloronwhite pull-right">Total Amount = <span id="totalComanda" class="coloronwhite">@ViewBag.CartAmount</span></span></strong>
+    </div>
+
+   
+</div>

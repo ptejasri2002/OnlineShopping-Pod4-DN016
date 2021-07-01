@@ -1,0 +1,31 @@
+﻿@model OnlineShoppingTeam4.Models.IndexViewModel
+@{
+    ViewBag.Title = "User Profile";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>Change your account Password</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Email:</dt>
+        <dd>@Model.Email</dd>
+        <dt>Password:</dt>
+        <dd>
+            [
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("Change your password", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetPassword")
+            }
+            ]
+        </dd>
+       
+       
+    </dl>
+</div>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<OnlineShoppingTeam4.Models.Categories>
+
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2>Categories</h2>
+<hr />
+<ol class="breadcrumb">
+
+    <li>
+        @Html.ActionLink("Dashboard", "Home", "Dashboard")
+    </li>
+
+    <li class="active">Categories</li>
+</ol>
+<hr />
+<div>
+    @Html.ActionLink("Add Categories", "Create", null, new { @class = "btn btn-default" })
+    <br /><br />
+</div>
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>
+                    Categories
+                </h4>
+            </div>
+            <div class="panel-body">
+                <table id="CategoriesTable" class="cell-border hover order-column">
+                    <thead>
+                        <tr>
+                            <th>
+                                Category Name
+                            </th>
+                            <th>
+                                Description
+                            </th>
+
+                            <th>
+                                Remove
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

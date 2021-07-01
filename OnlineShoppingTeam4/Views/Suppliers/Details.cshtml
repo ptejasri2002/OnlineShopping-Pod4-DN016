@@ -1,0 +1,122 @@
+﻿@model OnlineShoppingTeam4.Models.Suppliers
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+<hr />
+<ol class="breadcrumb">
+    <li>
+        @Html.ActionLink("Dashboard", "Home", "Dashboard")
+    </li>
+    <li>
+        @Html.ActionLink("Retailers", "Index", "Suppliers")
+    </li>
+    <li class="active">Details</li>
+</ol>
+<div>
+    <h4>Retailer</h4>
+    <hr />
+    
+    <dl class="dl-horizontal form-group">
+        <dt>
+            CompanyName
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)<br />
+        </dd>
+
+        <dt>
+            ContactName
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactName)<br />
+        </dd>
+
+        <dt>
+            Position
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactTitle)<br />
+        </dd>
+
+        <dt>
+            Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)<br />
+        </dd>
+
+        <dt>
+            City
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)<br />
+        </dd>
+
+        <dt>
+            Region
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region)<br />
+        </dd>
+
+        <dt>
+            PostalCode
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostalCode)<br />
+        </dd>
+
+        <dt>
+            Country
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)<br />
+        </dd>
+
+        <dt>
+            Phone
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)<br />
+        </dd>
+
+        <dt>
+            Fax
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax)<br />
+        </dd>
+
+        <dt>
+            Site
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomePage)<br />
+        </dd>
+        <dt>
+            @Html.ActionLink("Edit", "Edit", "Suppliers", new { id = Model.SupplierID }, new { @class = "btn btn-default" })
+        </dt>
+        <dd>
+            @Html.ActionLink("Back", "Index", "Suppliers", null, new { @class = "btn btn-default" })
+        </dd>
+    </dl>
+</div>
+
+   
+   
+

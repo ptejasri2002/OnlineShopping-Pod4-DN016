@@ -1,0 +1,53 @@
+﻿@model OnlineShoppingTeam4.Models.Categories
+
+@{
+    ViewBag.Title = "Remove";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2>Sterge</h2>
+<hr />
+<ol class="breadcrumb">
+    <li>
+        @Html.ActionLink("Dashboard", "Home", "Dashboard")
+    </li>
+    <li>
+        @Html.ActionLink("Categories", "Index", "Orders")
+    </li>
+    <li class="active">Remove</li>
+</ol>
+
+<h3>Are you sure you want to delete it?</h3>
+<div>
+    <h4>Categories</h4>
+    <hr />
+    
+    <dl class="dl-horizontal">
+        <dt>
+            Category Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)<br />
+        </dd>
+
+        <dt>
+            Description
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)<br />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Back", "Index", "Categories", new { @class = "btn btn-default" })
+            <input type="submit" value="Sterge" class="btn btn-default" /> 
+            
+        </div>
+    }
+</div>

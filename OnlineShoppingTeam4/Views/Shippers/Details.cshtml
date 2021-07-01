@@ -1,0 +1,46 @@
+﻿@model OnlineShoppingTeam4.Models.Shippers
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2>Details</h2>
+<hr />
+<ol class="breadcrumb">
+    <li>
+        @Html.ActionLink("Dashboard", "Home", "Dashboard")
+    </li>
+    <li>
+        @Html.ActionLink("senders", "Index", "Shippers")
+    </li>
+    <li class="active">Details</li>
+</ol>
+<div>
+    <h4>senders</h4>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            CompanyName
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)<br />
+        </dd>
+
+        <dt>
+            TelePhone
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)<br />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ShipperID }, new { @class = "btn btn-default" })
+</p>
+

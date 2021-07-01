@@ -1,0 +1,11 @@
+﻿body {
+
+}
+.imagine{
+    margin-top:40px;
+
+}
+
+img[class~=right]{
+    float:right;
+}

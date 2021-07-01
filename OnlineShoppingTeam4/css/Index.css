@@ -1,0 +1,353 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.carousel-item img {
+    width: 300px;
+    height: 300px;
+}
+/*Product-List 1*/
+.Top-offer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .Top-offer strong {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+        color: #1b1919;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-top: 40px;
+        padding: 5px 30px;
+        border: 1px solid #e0e0e0;
+    }
+
+    .Top-offer strong {
+        color: #ffffff;
+        background-color: #202020;
+        font-weight: 500;
+    }
+
+.para {
+    font-family: Calibri;
+    font-size: 1.2rem;
+    color: darkgrey;
+    cursor: pointer;
+}
+section.feature-item {
+    width: 90%;
+    height: auto;
+    margin: 50px auto;
+    box-shadow: 0px 0px 10px 3px grey;
+    position: relative;
+}
+/*.product-conl1 {
+    width: auto;
+    height: auto;
+    margin: 50px auto;
+    box-shadow: 0px 0px 10px 3px grey;
+    position: relative;
+}
+*/
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    border-top: 1px solid #f3f3f3;
+}
+
+.p-name {
+    color: #727272;
+}
+
+.p-pricel1 {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+
+.product-box:hover {
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+}
+
+.add-cartl1 {
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-color: #0b9d8a;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    display: none;
+    animation: fade 0.3s;
+}
+
+    .add-cartl1:hover {
+        background-color: lightblue;
+        transition: all ease 0.2s;
+    }
+
+.product-box:hover .add-cartl1 {
+    display: flex;
+}
+
+
+
+
+
+
+
+/* product-List 2*/
+.arrival-heading strong {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    color: #1b1919;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 40px;
+    padding: 5px 30px;
+    border: 1px solid #e0e0e0;
+}
+
+.arrival-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+    .arrival-heading strong {
+        color: #ffffff;
+        background-color: #202020;
+        font-weight: 500;
+    }
+
+    .arrival-heading p {
+        color: #808080;
+        margin: 10px;
+        font-size: 1.9rem;
+    }
+
+
+.product-box {
+    display: flex;
+    flex-grow: 0.5;
+    flex-direction: column;
+    align-items: center;
+    border: 7px solid #f7f7f7;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.product-img {
+    width: 200px;
+    height: 210px;
+    margin: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+    .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    border-top: 1px solid #f3f3f3;
+}
+
+.p-name {
+    color: #727272;
+}
+
+.p-price {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.product-box:hover {
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+}
+
+.add-cart {
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-color: #0b9d8a;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    display: none;
+    animation: fade 0.3s;
+}
+
+    .add-cart:hover {
+        background-color: lightblue;
+        transition: all ease 0.2s;
+    }
+
+.product-box:hover .add-cart {
+    display: flex;
+}
+
+section.new-arrival {
+    width: 90%;
+    height: auto;
+    margin: 50px auto;
+    box-shadow: 0px 0px 10px 3px grey;
+    position: relative;
+}
+
+
+
+
+/*  Categories*/
+
+.row {
+    --bs-gutter-x: 3.5rem;
+    --bs-gutter-y: 3.5rem;
+}
+
+.Cat-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    color: #1b1919;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 40px;
+    padding: 5px 30px;
+    border: 1px solid #e0e0e0;
+    color: #ffffff;
+    background-color: #202020;
+    font-weight: 500;
+}
+
+
+.Categories {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+.menu {
+    width: 280px;
+    border-radius: 20px;
+    margin: 20px;
+    position: relative;
+    flex-grow: 0.5;
+}
+
+    .menu img {
+        width: 120%;
+        height: 90%;
+        object-fit: cover;
+        object-position: center right;
+    }
+
+.btn {
+    position: absolute;
+    left: 49%;
+    top: 50%;
+    transform: translate(-20%,-50%);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: Arial;
+}
+
+.btn {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+}
+
+    .btn:hover {
+        background-color: #e7e7e7;
+    }
+
+
+
+.menu a {
+    color: #1b1919;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+section.Categories {
+    width: 90%;
+    height: auto;
+    margin: 50px auto;
+    box-shadow: 0px 0px 10px 3px grey;
+    position: relative;
+}
+
+/*footer*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+* {
+    font-family: Roboto;
+}
+
+.footer-distributed {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+    padding: 45px 50px;
+}
+
+a {
+    color: lawngreen;
+    text-decoration: none;
+}
+
+    a:hover {
+        background-color: greenyellow;
+        text-decoration: none;
+    }
+
+  

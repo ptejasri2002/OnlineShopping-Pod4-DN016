@@ -1,0 +1,22 @@
+﻿.selectat {
+    font-style: italic;
+    background-color: #bf5a16;
+}
+#search {
+    color: #4e5d6c;
+}
+.thead {
+    border-style:groove;
+    border-width:2px;
+    border-color:white;
+    border-collapse:separate;
+    border-bottom:3px groove white;
+}
+.tbody {
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    border-collapse: separate;
+    border-bottom: 2px solid white;
+}
+

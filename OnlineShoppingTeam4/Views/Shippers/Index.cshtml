@@ -1,0 +1,56 @@
+﻿@model IEnumerable<OnlineShoppingTeam4.Models.Shippers>
+
+@{
+    ViewBag.Title = "senders";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2>senders</h2>
+<hr />
+<ol class="breadcrumb">
+    <li>
+        @Html.ActionLink("Dashboard", "Home", "Dashboard")
+    </li>
+
+    <li class="active">senders</li>
+</ol>
+<hr />
+<br />
+<div>
+    @Html.ActionLink("Add sender", "Create", null, new { @class = "btn btn-default" })
+    <br /><br />
+</div>
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>
+                    senders
+                </h4>
+            </div>
+            <div class="panel-body">
+                <table id="ShippersTable" class="cell-border hover order-column">
+
+                    <thead>
+                        <tr>
+                            <th>
+                                Company Name
+                            </th>
+                            <th>
+                                Telephone
+                            </th>
+                            <th>
+                                Remove
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

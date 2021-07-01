@@ -1,0 +1,88 @@
+﻿@model OnlineShoppingTeam4.Models.Transactions
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Payment Page</h2>
+<hr />
+
+
+@using (Html.BeginForm("CreateOrder", "Payment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+   
+    <hr />
+    @Html.ValidationSummary(true)
+
+
+
+    <div class="form-group">
+        <span class="control-label col-md-2 bold"><strong>Email</strong></span>
+        <div class="col-md-2">
+            @Html.EditorFor(model =>  model.Email, new {  @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <span class="control-label col-md-2 bold"><strong>Amount</strong></span>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Amount, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.Amount)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <span class="control-label col-md-2 bold"><strong>CardNo</strong></span>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CardNo)
+            @Html.ValidationMessageFor(model => model.CardNo)
+        </div>
+    </div>
+    <div class="form-group">
+        <span class="control-label col-md-2 bold"><strong>Card Holder Name</strong></span>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CardHolderName )
+            @Html.ValidationMessageFor(model => model.CardHolderName)
+        </div>
+    </div>
+    <div class="form-group">
+        <span class="control-label col-md-2 bold"><strong>CVV</strong></span>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CVV)
+            @Html.ValidationMessageFor(model => model.CVV)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <span class="control-label col-md-2 bold"><strong>Expiry Month</strong></span>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ExpiryMonth)
+            @Html.ValidationMessageFor(model => model.ExpiryMonth)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <span class="control-label col-md-2 bold"><strong>Expiry Year</strong></span>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ExpiryYear)
+            @Html.ValidationMessageFor(model => model.ExpiryYear)
+        </div>
+    </div>
+
+
+    <br /><br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

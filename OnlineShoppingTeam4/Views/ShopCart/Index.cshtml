@@ -1,0 +1,79 @@
+@model OnlineShoppingTeam4.Models.ShopCart.shoppingcartDetails
+@{ ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+<div class="container whiterounded coloronwhite">
+    <h2>Shopping cart</h2>
+    <hr />
+
+    <table id="ShopCartTable" class="cell-border hover order-column coloronwhite">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Qty
+                </th>
+                <th>
+                    Unit price
+                </th>
+                <th>
+                    Product total
+                </th>
+                @*<th>
+                    Remove
+                </th>*@
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="display:none;">Items</td>
+            </tr>
+            @if (Model.cart != null)
+            {
+                
+                    int i = 1;
+               
+                foreach (var item in Model.cart)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+
+                        <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+
+                        <td>@Html.DisplayFor(modelItem => item.UnitPrice)</td>
+
+                        <td>@Html.DisplayFor(modelItem => item.TotalPrice)</td>
+                        @*<td></td>*@
+                    </tr>
+                    i += 1;
+                }
+            }
+
+        </tbody>
+
+    </table>
+    <br />
+    <div class="container col-xs-9">
+        <strong><span class="coloronwhite pull-right">Total Amount = <span id="totalComanda" class="coloronwhite">@ViewBag.CartAmount</span></span></strong>
+    </div>
+
+    @using (Html.BeginForm("GetShipVia", "ShopCart", FormMethod.Post, htmlAttributes: new { @class = "ord-form" }))
+    {
+@Html.AntiForgeryToken()
+
+                <div class="form">
+                    <strong class="coloronwhite">Select Courier</strong>
+                    <br />
+
+                    @Html.DropDownList("ShipVia", (IEnumerable<SelectListItem>)ViewBag.ShipVia, htmlAttributes: new { @class = "form" })
+
+                    <br />
+                    <br />
+                    <input type="submit" value="Place the order" class="btn btn-default" />
+
+                </div>
+                                <br />}
+</div>

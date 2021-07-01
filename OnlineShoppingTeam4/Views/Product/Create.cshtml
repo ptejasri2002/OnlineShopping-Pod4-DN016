@@ -1,0 +1,125 @@
+﻿@model OnlineShoppingTeam4.Models.Products
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Add</h2>
+<hr />
+<ol class="breadcrumb">
+    <li>
+        @Html.ActionLink("Dashboard", "Home", "Dashboard")
+    </li>
+    <li>
+        @Html.ActionLink("Products", "Index", "Product")
+    </li>
+    @{
+        string category = Request.QueryString["category"] ?? "";
+        if (!String.IsNullOrEmpty(category))
+        {
+            <li>
+                @Html.ActionLink(category, "Index", "Product", new { category = category }, null)
+            </li>
+        }
+    }
+    <li class="active">Add</li>
+</ol>
+
+@using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Product</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Product Name</strong></span>
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.ProductName, new { required = "required" })
+                @Html.ValidationMessageFor(model => model.ProductName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>SupplierID</strong></span>
+            <div class="col-md-10">
+                @Html.DropDownList("SupplierID")
+                @Html.ValidationMessageFor(model => model.SupplierID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>CategoryID</strong></span>
+            <div class="col-md-10">
+                @Html.DropDownList("CategoryID", null, htmlAttributes: new { id = "dropdownCategory" })
+                @Html.ValidationMessageFor(model => model.CategoryID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Quantity per unit</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.QuantityPerUnit)
+                @Html.ValidationMessageFor(model => model.QuantityPerUnit)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Unit Price</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UnitPrice)
+                @Html.ValidationMessageFor(model => model.UnitPrice)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>UnitsInStock</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UnitsInStock)
+                @Html.ValidationMessageFor(model => model.UnitsInStock)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Units On Order</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UnitsOnOrder)
+                @Html.ValidationMessageFor(model => model.UnitsOnOrder)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Reorder Level</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ReorderLevel)
+                @Html.ValidationMessageFor(model => model.ReorderLevel)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="control-label col-md-2 bold"><strong>Discontinued</strong></span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Discontinued)
+                @Html.ValidationMessageFor(model => model.Discontinued)
+            </div>
+        </div>
+        <div class="from-group">
+            <span class="control-label col-md-2 bold"><strong>Picture</strong></span>
+            <div class="col-md-10">
+                <input type="file" id="filechooser" accept="image/*" name="ProductImage">
+            </div>
+        </div>
+        <br /><br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink("Back", "Index", new { category = category, search = Request.QueryString["search"] ?? "" }, new { @class = "btn btn-default" }) |
+                <input type="submit" value="create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
